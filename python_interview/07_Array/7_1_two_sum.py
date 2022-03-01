@@ -5,12 +5,13 @@ def sol1(arr:list[int], target:int)->list[int]:
                 return [i,j]
     
 def sol2(arr:list[int], target:int)->list[int]:
-    pass
-
-def sol3(arr:list[int], target:int)->list[int]:
-    pass
-
-def sol4(arr:list[int], target:int)->list[int]:
+    nums_map={}
+    for i,num in enumerate(arr):
+        nums_map[num]=i
+    for i ,num in enumerate(arr):
+        if target-num in nums_map and i!=nums_map[target-num]:
+            #자기자신인 경우 제외
+            return [i,nums_map[target-num]]
     pass
 
 
